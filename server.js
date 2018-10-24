@@ -107,4 +107,4 @@ app.get('/now', function(request, response) {
 
 app.get('/', (req, res) => res.send('Good luck 👍'))
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+app.listen(3000, () => console.log('PatBooking Server listening on port 3000!'))
