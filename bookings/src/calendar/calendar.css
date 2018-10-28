@@ -8,7 +8,7 @@ tr {
 }
 
 .calendar-container {
-    border: 2px solid skyblue;
+    border: 2px solid rgb(0, 0, 0);
 }
 
 .calendar {
@@ -19,7 +19,7 @@ tr {
 }
 
 .calendar-header {
-    border-bottom: 1px dashed skyblue;
+    border-bottom: 1px solid rgb(255, 60, 0);
     font-size: 1.6em;
 }
 
@@ -51,7 +51,7 @@ tr {
 }
 
 .current-day {
-    background-color: #4285f4;
+    background-color: #dd5d08;
     width: 28px;
     height: 28px;
     line-height: 28px;
