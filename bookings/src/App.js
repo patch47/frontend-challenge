@@ -12,13 +12,13 @@ const style = {
 
 class App extends Component {
   onDayClick = (e, day) => {
-    alert(day);
+    ;
   }
   
   render() {
     return (
       <div className="App">
-        <Calendar style={style} width="502px" 
+        <Calendar style={style} width="402px" 
           onDayClick={(e, day)=> this.onDayClick(e, day)}/>     
       </div>
     );

@@ -70,6 +70,33 @@ export default class Calendar extends React.Component {
         this.props.onPrevMonth && this.props.onPrevMonth();
     }
 
+
+    MonthLabel = () => {
+        return (
+            <span className="label-month">
+                {this.month()}
+            </span>
+        );
+    }
+
+    YearLabel = () => {
+        return (
+            <span className="label-year">
+             {this.year()}
+           </span>
+        );
+    }
+
+    onDayClick = (e, day) => {
+        this.setState({
+            selectedDay: day
+        }, () => {
+            ;
+        });
+
+        this.props.onDayClick && this.props.onDayClick(e, day);
+    }
+    
 render(){
     let weekdays = this.weekdays.map((day) => {
         return (
@@ -132,6 +159,19 @@ render(){
          <table className="calendar">
                     <thead>
                         <tr className="calendar-header">
+                        <td colSpan="2">
+                                <this.MonthLabel />
+                                {" "}
+                                <this.YearLabel />
+                            </td>
+                            <td colSpan="2" className="chevronMonthChange">
+                                <i className="prev fa fa-fw fa-chevron-left"//font not working TODO
+                                    onClick={(e)=> {this.prevMonth()}}>
+                                </i>
+                                <i className="prev fa fa-fw fa-chevron-right"
+                                    onClick={(e)=> {this.nextMonth()}}>
+                                </i>
+                            </td>
                         </tr>
                     </thead>
                     <tbody>
