@@ -1,3 +1,12 @@
+Firstly Delete package-lock.json file in your project folder.
+
+
+
+And then install dependencies again by npm install
+
+
+
+
 Run npm start in bookings dir
 
 
