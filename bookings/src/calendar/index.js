@@ -6,7 +6,7 @@ export default class Calendar extends React.Component {
     state = {
         date: moment(),
         today: moment(),
-        const selectedDay = ["null","null"]
+        selectedDay: [],
     }
 
     constructor(props) {
@@ -88,20 +88,21 @@ export default class Calendar extends React.Component {
     }
 
     onDayClick = (e, day) => {
-        this.setState({
             //if it's in the array
-            if(selectedDay.indexOf('day')>-1){
+            if(selectedDay.indexOf(day)>-1){
                 //remove 1 element from the index of day
-            const selectedDay = selectedDay.splice(selectedDay.indexOf('day'),1)  
+                this.setState({
+                    selectedDay: selectedDay.splice(selectedDay.indexOf(day),1)
+                }); 
             }
             //if not in array, and not sunday
-            else if(/*day is not sunday)*/{
+            else if(moment.weekdaysShort(day)!== 'Sun')/*day is not sunday)*/{
                 //add to array
-                const selectedDay = selectedDay.concat(["day"])
+                this.setState({
+                    selectedDay: selectedDay.concat([day])
+                });
             }
-        }, () => {
-            ;
-        });
+        
 
         this.props.onDayClick && this.props.onDayClick(e, day);
     }
