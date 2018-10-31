@@ -89,17 +89,17 @@ export default class Calendar extends React.Component {
 
     onDayClick = (e, day) => {
             //if it's in the array
-            if(selectedDay.indexOf(day)>-1){
+            if(this.state.selectedDay.indexOf(day)>-1){
                 //remove 1 element from the index of day
                 this.setState({
-                    selectedDay: selectedDay.splice(selectedDay.indexOf(day),1)
+                    selectedDay: this.state.selectedDay.splice(this.state.selectedDay.indexOf(day),1)
                 }); 
             }
             //if not in array, and not sunday
             else if(moment.weekdaysShort(day)!== 'Sun')/*day is not sunday)*/{
                 //add to array
                 this.setState({
-                    selectedDay: selectedDay.concat([day])
+                    selectedDay: this.state.selectedDay.concat([day])
                 });
             }
         
